@@ -1,37 +1,18 @@
-## Welcome to GitHub Pages
+## Code Search
 
-You can use the [editor on GitHub](https://github.com/repomono/cs/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is a code search tool that is intended to be used locally on developer workstations.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- A simple download of the project is sufficient.  Third-party dependencies are checked in.  It doesn't require Internet connection when running.
+- The project uses MIT license which is permissive enough for widespread use.
+- It relies on GNU grep to be in your PATH and uses that to search code.
 
-### Markdown
+Demo: https://demo.repomono.com/cs/view.php
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+NOTE:  It is considered in alpha stage.  Please create issues if you want to give feedback!  :-)
 
-```markdown
-Syntax highlighted code block
+We implemented two versions, one in PHP and with semantic cross references, the other one in Python.
+The open source version is written in Python and tested with Python 3.8 on Fedora 32.
+We are still polishing the semantic cross references and will open source that in the future.
+At the same time we'd like to collect feedback on the overall design, user experience, and actual value of the tool.
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/repomono/cs/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+At this point we do not have enough resources to handle external code changes.  If you have something in mind, just let us know in the issues, and we'll try to prioritize.  Thank you!
