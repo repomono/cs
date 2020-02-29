@@ -1,0 +1,345 @@
+body {
+  height: 100vh;
+
+  padding: 0 4px;
+  color: black;
+  background-color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  min-height: 28px;
+  background-color: #bcf;
+
+  display: flex;
+  flex-direction: column;
+}
+
+nav b {
+  font-weight: bold;
+}
+
+main {
+  flex: 1;
+  box-sizing: border-box;
+  border-bottom: 3px solid #bcf;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+}
+
+aside {
+  width: 300px;
+  min-width: 150px;
+  box-sizing: border-box;
+  border-left: 3px solid #bcf;
+}
+
+.divider {
+  background-color: #bcf;
+}
+
+.vertical.divider {
+  width: 4px;
+  min-width: 4px;
+  max-width: 4px;
+  cursor: col-resize;
+}
+
+.horizontal.divider {
+  height: 4px;
+  min-height: 4px;
+  max-height: 4px;
+  cursor: row-resize;
+}
+
+article {
+  flex: 1;
+  box-sizing: border-box;
+  border-right: 3px solid #bcf;
+
+  display: flex;
+  flex-direction: column;
+}
+
+article>.center {
+  flex: 1;
+}
+
+article>.bottom {
+  height: 200px;
+}
+
+.pane {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pane>.header {
+  height: 28px;
+  box-sizing: border-box;
+
+  background-color: #e3e9ff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #bcf;
+}
+
+.pane>.header>span {
+  font-size: small;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.pane>.header>.file-name {
+  margin-left: 9px;
+}
+
+.pane>.header>.tab-name {
+  height: 24px;
+  margin: 4px 3px 0;
+  padding: 6px;
+  background-color: white;
+  border-top: 1px solid #bcf;
+  border-left: 1px solid #bcf;
+  border-right: 1px solid #bcf;
+  border-bottom: 1px solid white;
+  border-radius: 3px 3px 0 0;
+}
+
+.pane>.header>.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.pane>.content {
+  flex: 1;
+  overflow: auto;
+  border-top: 1px solid #ccc;
+}
+
+.pane>.content:nth-child(2) {
+  border-top: none;
+}
+
+button {
+  font-weight: normal;
+  font-size: .7em;
+  padding: 0 .5em;
+  margin: 0;
+  height: 20px;
+  color: #333;
+  border: 1px solid #bbb;
+}
+
+.source-code-viewer {
+  display: flex;
+  flex-direction: row;
+  font-family: monospace;
+  line-height: 1.25em;
+}
+
+.source-code-viewer>.line-numbers {
+  width: 3.8em;
+  text-align: right;
+  padding-top: .5em;
+  background-color: #f7f7f7;
+  border-right: 1px solid #eee;
+}
+
+.source-code-viewer>.line-numbers>a {
+  display: block;
+  text-decoration: none;
+  color: #aaa;
+  outline: none;
+  padding-right: .3em;
+  position: relative;
+}
+
+.source-code-viewer>.line-numbers>a>span {
+  position: absolute;
+  transform: translateY(-20vh);
+  z-index: -999;
+}
+
+.source-code-viewer>.line-numbers>a>span:target::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  transform: translateY(20vh);
+  background: #bcf;
+  width: calc(.3em + .5em + 80ch);
+  height: 1.25em;
+}
+
+.source-code-viewer>pre {
+  margin-left: .5em;
+  padding-top: .5em;
+  border-right: 1px solid #ccc;
+  width: 80ch;
+}
+
+.breadcrumb {
+  height: 100%;
+  flex: 1;
+
+  font-size: small;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.breadcrumb>li {
+  margin-left: 3px;
+}
+
+.file-tree {
+  /* This is necessary for .file.selected::before to be positioned correctly. */
+  position: relative;
+}
+
+.file-tree ol {
+  font-size: .8rem;
+}
+
+.file-tree li {
+  padding: 0 3px 0 20px;
+  white-space: nowrap;
+}
+
+.file-tree a {
+  display: block;
+  box-sizing: border-box;
+  height: 21px;
+  padding: 3px 0;
+  outline: none;
+  text-decoration: none;
+  cursor: default;
+  color: inherit !important;
+}
+
+.file-tree .expand {
+  background: url("/assets/plus.gif") no-repeat;
+  background-position: 3px 2px;
+}
+
+.file-tree .expand ol {
+  display: none;
+}
+
+.file-tree .collapse {
+  background: url("/assets/minus.gif") no-repeat;
+  background-position: 3px 2px;
+}
+
+.file-tree .selected::before {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 21px;
+  background-color: #68e;
+  position: absolute;
+  left: 0;
+  z-index: -999;
+}
+
+.file-tree .selected {
+  color: white;
+}
+
+#search_bar {
+  padding: 10px 0 5px 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+#search_bar .logo {
+  height: 24px;
+}
+
+#search_bar .query {
+  box-sizing: border-box;
+  width: 420px;
+  border: 1px solid #aaa;
+  padding: 2px 5px;
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 17px;
+  color: #333;
+  margin-left: 15px;
+}
+
+#search_bar .submit {
+  box-sizing: border-box;
+  width: 100px;
+  border: 1px solid #aaa;
+  padding: 2px;
+  font-size: 13px;
+  line-height: 17px;
+  font-weight: normal;
+  color: #333;
+  background: white;
+  margin-left: 5px;
+}
+
+#search_bar .submit:hover {
+  border-color: #333;
+}
+
+#search_results {
+  border-left: 3px solid #bcf;
+  border-right: 3px solid #bcf;
+}
+
+#search_results>article {
+  display: block;
+  overflow: auto;
+  border-right: none;
+}
+
+.search-result .source-code-viewer>.line-numbers,
+.search-result .source-code-viewer>pre {
+  padding-top: .3em;
+  padding-bottom: .5em;
+}
+
+.search-result .source-code-viewer>pre {
+  border-right: none;
+}
+
+.search-result .source-code-viewer>pre a.line {
+  display: inline-block;
+  min-width: 80ch;
+  outline: none;
+}
+
+.search-result .source-code-viewer>pre a.line:hover {
+  background: #bcf;
+  text-decoration: none;
+}
+
+.highlight {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+
+.c, .ch, .cm, .c1, .cs { color: #800; }
+.k, .kc, .kd, .kn, .kp, .kr, .kt, .nt { color: #008; }
+.cp { color: #60b; }
+.cpf, .s, .sa, .sb, .sc, .dl, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss { color: #080; }
+.m, .mb, .mf, .mh, .mi, .il, .mo { color: #066; }
+.gh, .gu { color: #6f0465; font-weight: bold; }
+
+code a {
+  text-decoration: none;
+  color: inherit !important;
+}
+
+code a:hover {
+  text-decoration: underline;
+}
