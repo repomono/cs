@@ -10,6 +10,16 @@ Demo: https://demo.repomono.com/cs/view.php
 
 NOTE:  It is considered in alpha stage.  Please create issues if you want to give feedback!  :-)
 
+Example usage:
+
+```
+$ cd ~/src/
+$ git clone https://github.com/repomono/cs.git
+$ cd ~/your-own-project-directory/
+$ python3 ~/src/cs/main.py
+Listening on http://localhost:56789/
+```
+
 We implemented two versions, one in PHP and with semantic cross references, the other one in Python.
 The open source version is written in Python and tested with Python 3.8 on Fedora 32.
 We are still polishing the semantic cross references and will open source that in the future.
